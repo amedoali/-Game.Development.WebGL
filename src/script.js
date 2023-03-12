@@ -360,6 +360,19 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 //shadow
 // renderer.shadowMap.enabled = true
 
+function cameraDistanceForRectangle(camera, objWidth, objHeight, canvasWidth, canvasHeight) {
+	var aspectRatio = canvasWidth / canvasHeight, a, b;
+	if(objWidth > objHeight) {
+		a = Math.max(objWidth, objHeight) / 2/ aspectRatio / Math.tan(Math.PI * camera.fov / 360),
+		b = Math.min(objWidth, objHeight) / 2 / Math.tan(Math.PI * camera.fov / 2);
+	}
+	else {
+		a = Math.min(objWidth, objHeight) / 2 / aspectRatio / Math.tan(Math.PI * camera.fov / 360),
+		b = Math.max(objWidth, objHeight) / 2 / Math.tan(Math.PI * camera.fov / 2);
+	}
+	return Math.max(a, b);
+}
+
 /**
  * Animate
 */
