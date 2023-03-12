@@ -1,2 +1,2 @@
 # Game.Development.WebGL 
-for downloud assets with Three.js
+for download assets with Three.js 
