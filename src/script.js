@@ -221,11 +221,11 @@ const spotLight = new THREE.SpotLight( 0xffffff, 5 );
 					shadows: true
 				};
 
-				gui.add( params, 'map', textures ).onChange( function ( val ) {
+				// gui.add( params, 'map', textures ).onChange( function ( val ) {
 
-					spotLight.map = val;
+				// 	spotLight.map = val;
 
-				} );
+				// } );
 
 				gui.addColor( params, 'color' ).onChange( function ( val ) {
 
@@ -233,59 +233,59 @@ const spotLight = new THREE.SpotLight( 0xffffff, 5 );
 
 				} );
 
-				gui.add( params, 'intensity', 10 ).onChange( function ( val ) {
+				// gui.add( params, 'intensity', 10 ).onChange( function ( val ) {
 
-					spotLight.intensity = val;
+				// 	spotLight.intensity = val;
 
-				} );
-
-
-				gui.add( params, 'distance', 50, 200 ).onChange( function ( val ) {
-
-					spotLight.distance = val;
-
-				} );
-
-				gui.add( params, 'angle', 0, Math.PI / 3 ).onChange( function ( val ) {
-
-					spotLight.angle = val;
-
-				} );
-
-				gui.add( params, 'penumbra', 0, 1 ).onChange( function ( val ) {
-
-					spotLight.penumbra = val;
-
-				} );
-
-				gui.add( params, 'decay', 1, 2 ).onChange( function ( val ) {
-
-					spotLight.decay = val;
-
-				} );
-
-				gui.add( params, 'focus', 0, 1 ).onChange( function ( val ) {
-
-					spotLight.shadow.focus = val;
-
-				} );
+				// } );
 
 
-				gui.add( params, 'shadows' ).onChange( function ( val ) {
+				// gui.add( params, 'distance', 50, 200 ).onChange( function ( val ) {
 
-					renderer.shadowMap.enabled = val;
+				// 	spotLight.distance = val;
 
-					scene.traverse( function ( child ) {
+				// } );
 
-						if ( child.material ) {
+				// gui.add( params, 'angle', 0, Math.PI / 3 ).onChange( function ( val ) {
 
-							child.material.needsUpdate = true;
+				// 	spotLight.angle = val;
 
-						}
+				// } );
 
-					} );
+				// gui.add( params, 'penumbra', 0, 1 ).onChange( function ( val ) {
 
-				} );
+				// 	spotLight.penumbra = val;
+
+				// } );
+
+				// gui.add( params, 'decay', 1, 2 ).onChange( function ( val ) {
+
+				// 	spotLight.decay = val;
+
+				// } );
+
+				// gui.add( params, 'focus', 0, 1 ).onChange( function ( val ) {
+
+				// 	spotLight.shadow.focus = val;
+
+				// } );
+
+
+				// gui.add( params, 'shadows' ).onChange( function ( val ) {
+
+				// 	renderer.shadowMap.enabled = val;
+
+				// 	scene.traverse( function ( child ) {
+
+				// 		if ( child.material ) {
+
+				// 			child.material.needsUpdate = true;
+
+				// 		}
+
+				// 	} );
+
+				// } );
 
 				gui.open(false);
 
